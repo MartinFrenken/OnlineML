@@ -38,7 +38,7 @@ def emit_update():
 
 
 def plot_stock(init_row,end_row):
-    msft = pd.read_csv(r"C:\Users\win 10\rpggame\AAPL.csv", sep=',')
+    msft = pd.read_csv(r"AAPL.csv", sep=',')
     msft = msft[['date', 'open']]
     msft = msft.rename(columns={"open": "Apple's Stock Value"});
     msft.set_index('date', inplace=True)
@@ -59,7 +59,7 @@ def plot_stock(init_row,end_row):
     plt.close(fig)
 
 def predict_stock(init_row,end_row):
-    msft = pd.read_csv(r"C:\Users\win 10\rpggame\AAPL.csv", sep=',')
+    msft = pd.read_csv(r"AAPL.csv", sep=',')
     msft = msft[['date', 'open']]
     msft = msft.rename(columns={"open": "Microsofts's Stock Value"});
     model = LinearRegression()
@@ -117,7 +117,7 @@ def predict_stock(init_row,end_row):
     BuyIndicators.append(BuyIndicator(action_date,bought,holding))
 
 def buy_and_hold(init_row,end_row):
-    msft = pd.read_csv(r"C:\Users\win 10\rpggame\AAPL.csv", sep=',')
+    msft = pd.read_csv(r"AAPL.csv", sep=',')
     msft = msft[['date', 'open']]
     msft = msft.rename(columns={"open": "Microsofts's Stock Value"});
     msft['date'] = pd.to_datetime(msft['date'])
